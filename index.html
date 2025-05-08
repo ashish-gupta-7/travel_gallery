@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Travel Gallery</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>My Travel Photo Gallery</h1>
+    <p>Explore my adventures around the world!</p>
+  </header>
+
+  <section class="gallery">
+    <!-- Gallery items -->
+    <div class="photo-card">
+      <img src="images/photo1.jpg" alt="Travel Photo 1" />
+      <div class="share-buttons">
+        <button onclick="shareImage('images/photo1.jpg')">Share</button>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <img src="images/photo2.jpg" alt="Travel Photo 2" />
+      <div class="share-buttons">
+        <button onclick="shareImage('images/photo2.jpg')">Share</button>
+      </div>
+    </div>
+
+    <!-- Add more images similarly -->
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
