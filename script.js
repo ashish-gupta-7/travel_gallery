@@ -29,3 +29,38 @@ function shareImage(imageUrl) {
     newWindow.document.write(popup);
   }
 }
+
+function openLightbox(imgUrl) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = imgUrl;
+  lightbox.style.display = "block";
+}
+
+// Close when clicking the X
+document.querySelector(".close").onclick = function () {
+  document.getElementById('lightbox').style.display = "none";
+};
+
+// Close when clicking outside the image
+document.getElementById('lightbox').onclick = function (e) {
+  if (e.target === this) {
+    this.style.display = "none";
+  }
+};
+
+function filterPhotos(category) {
+  const cards = document.querySelectorAll('.photo-card');
+
+  cards.forEach(card => {
+    if (category === 'all') {
+      card.style.display = 'block';
+    } else {
+      if (card.classList.contains(category)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+}
