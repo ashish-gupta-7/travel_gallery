@@ -12,24 +12,34 @@
     <p>Explore my adventures around the world!</p>
   </header>
 
-  <section class="gallery">
-    <!-- Gallery items -->
-    <div class="photo-card">
-      <img src="images/photo1.jpg" alt="Travel Photo 1" />
-      <div class="share-buttons">
-        <button onclick="shareImage('images/photo1.jpg')">Share</button>
-      </div>
-    </div>
-
-    <div class="photo-card">
-      <img src="images/photo2.jpg" alt="Travel Photo 2" />
-      <div class="share-buttons">
-        <button onclick="shareImage('images/photo2.jpg')">Share</button>
-      </div>
-    </div>
-
-    <!-- Add more images similarly -->
+  <section class="filters">
+    <button class="filter-btn" onclick="filterPhotos('all')">All</button>
+    <button class="filter-btn" onclick="filterPhotos('paris')">Paris</button>
+    <button class="filter-btn" onclick="filterPhotos('bali')">Bali</button>
+    <button class="filter-btn" onclick="filterPhotos('london')">London</button>
   </section>
+
+ <div class="photo-card paris">
+  <img src="images/photo1.jpg" alt="Paris" onclick="openLightbox('images/photo1.jpg')" />
+  <div class="share-buttons">
+    <button onclick="shareImage('images/photo1.jpg')">Share</button>
+  </div>
+</div>
+
+<div class="photo-card bali">
+  <img src="images/photo2.jpg" alt="Bali" onclick="openLightbox('images/photo2.jpg')" />
+  <div class="share-buttons">
+    <button onclick="shareImage('images/photo2.jpg')">Share</button>
+  </div>
+</div>
+
+<!-- Add other images with their respective categories -->
+
+
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" alt="Enlarged Travel Photo" />
+    </div>
 
   <script src="script.js"></script>
 </body>
