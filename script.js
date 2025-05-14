@@ -50,6 +50,34 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Fallback lazy loading for older browsers
+document.addEventListener("DOMContentLoaded", function () {
+  const lazyImages = document.querySelectorAll('img.lazy');
+
+  if ("IntersectionObserver" in window) {
+    let observer = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove("lazy");
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    lazyImages.forEach(function (img) {
+      observer.observe(img);
+    });
+  } else {
+    // Fallback if IntersectionObserver not supported
+    lazyImages.forEach(function (img) {
+      img.src = img.dataset.src;
+    });
+  }
+});
+
+
 function openLightbox(imgUrl) {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
