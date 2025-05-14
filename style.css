@@ -22,6 +22,51 @@ header h1 {
   margin-bottom: 10px;
 }
 
+/* Toggle Button */
+#darkModeToggle {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#darkModeToggle:hover {
+  background-color: #444;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode header,
+body.dark-mode .share-buttons,
+body.dark-mode .filters {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .photo-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .share-buttons button,
+body.dark-mode .filter-btn,
+body.dark-mode #darkModeToggle {
+  background-color: #333;
+  color: white;
+}
+
+body.dark-mode .share-buttons button:hover,
+body.dark-mode .filter-btn:hover,
+body.dark-mode #darkModeToggle:hover {
+  background-color: #555;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
