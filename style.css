@@ -171,3 +171,56 @@ body.dark-mode #darkModeToggle:hover {
 .filter-btn:hover {
   background-color: #218838;
 }
+
+.about, .contact {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .about, body.dark-mode .contact {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.about h2, .contact h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input, .contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+body.dark-mode .contact input,
+body.dark-mode .contact textarea {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+.contact button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background-color: #218838;
+}
