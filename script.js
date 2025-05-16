@@ -30,6 +30,13 @@ function shareImage(imageUrl) {
   }
 }
 
+// Hamburger menu toggle
+function toggleMenu() {
+  const navLinks = document.getElementById("navLinks");
+  navLinks.classList.toggle("active");
+}
+
+
 // Dark Mode Toggle
 document.getElementById('darkModeToggle').addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
