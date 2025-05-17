@@ -126,3 +126,32 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
   alert("Thanks for reaching out! I'll get back to you soon.");
   this.reset(); // Clear the form
 });
+
+// Handle image upload and preview
+document.getElementById('photoUpload').addEventListener('change', function (event) {
+  const file = event.target.files[0];
+  if (!file || !file.type.startsWith('image/')) {
+    alert("Please upload a valid image file.");
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const imageSrc = e.target.result;
+
+    const card = document.createElement('div');
+    card.className = 'photo-card';
+
+    card.innerHTML = `
+      <img src="${imageSrc}" alt="Uploaded photo" loading="lazy" />
+      <div class="photo-info">
+        <p>New Upload</p>
+        <a href="${imageSrc}" download class="download-btn">Download</a>
+      </div>
+    `;
+
+    document.querySelector('.gallery').prepend(card); // Add to top of gallery
+  };
+
+  reader.readAsDataURL(file); // Convert to Base64
+});

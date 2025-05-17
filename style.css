@@ -130,6 +130,36 @@ body.dark-mode #darkModeToggle:hover {
   background-color: #555;
 }
 
+.upload-section {
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+body.dark-mode .upload-section {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+#photoUpload {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 16px;
+}
+
+body.dark-mode #photoUpload {
+  background-color: #333;
+  color: white;
+  border: 1px solid #666;
+}
+
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
