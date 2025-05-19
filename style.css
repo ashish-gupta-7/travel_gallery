@@ -342,3 +342,34 @@ body.dark-mode .contact textarea {
 .contact button:hover {
   background-color: #218838;
 }
+
+
+/* caption on :hover */
+.hover-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-container img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.hover-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-container:hover .hover-caption {
+  opacity: 1;
+}

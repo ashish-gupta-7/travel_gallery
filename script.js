@@ -169,3 +169,16 @@ document.getElementById('addPhotoBtn').addEventListener('click', function () {
 
   reader.readAsDataURL(uploadedFile);
 });
+
+
+// caption on hover
+
+card.innerHTML = `
+  <div class="hover-container">
+    <img src="${imageSrc}" alt="Uploaded Photo" loading="lazy" />
+    <div class="hover-caption">New Upload</div>
+  </div>
+  <div class="photo-info">
+    <a href="${imageSrc}" download class="download-btn">Download</a>
+  </div>
+`;
