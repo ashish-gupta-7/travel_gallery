@@ -127,11 +127,23 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
   this.reset(); // Clear the form
 });
 
-// Handle image upload and preview
+let uploadedFile = null;
+
+// Store selected file
 document.getElementById('photoUpload').addEventListener('change', function (event) {
   const file = event.target.files[0];
-  if (!file || !file.type.startsWith('image/')) {
-    alert("Please upload a valid image file.");
+  if (file && file.type.startsWith('image/')) {
+    uploadedFile = file;
+  } else {
+    uploadedFile = null;
+    alert("Please select a valid image file.");
+  }
+});
+
+// Handle upload on button click
+document.getElementById('addPhotoBtn').addEventListener('click', function () {
+  if (!uploadedFile) {
+    alert("Please select an image first.");
     return;
   }
 
@@ -150,8 +162,10 @@ document.getElementById('photoUpload').addEventListener('change', function (even
       </div>
     `;
 
-    document.querySelector('.gallery').prepend(card); // Add to top of gallery
+    document.querySelector('.gallery').prepend(card); // Add to top
+    uploadedFile = null; // Reset
+    document.getElementById('photoUpload').value = ""; // Clear input
   };
 
-  reader.readAsDataURL(file); // Convert to Base64
+  reader.readAsDataURL(uploadedFile);
 });
