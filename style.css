@@ -144,6 +144,15 @@ body.dark-mode .upload-section {
   color: white;
 }
 
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+
 #photoUpload {
   margin-top: 10px;
   padding: 10px;
@@ -372,4 +381,19 @@ body.dark-mode .contact textarea {
 
 .hover-container:hover .hover-caption {
   opacity: 1;
+}
+
+.drop-zone {
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.3s ease;
+}
+
+.drop-zone.dragover {
+  background-color: #f0f0f0;
+  border-color: #000;
 }
