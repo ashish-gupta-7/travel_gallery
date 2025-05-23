@@ -182,3 +182,28 @@ card.innerHTML = `
     <a href="${imageSrc}" download class="download-btn">Download</a>
   </div>
 `;
+
+const dropZone = document.getElementById('drop-zone');
+const fileInput = document.getElementById('photoInput');
+
+// Click to open file chooser
+dropZone.addEventListener('click', () => fileInput.click());
+
+// Drag enter/over/leave
+dropZone.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  dropZone.classList.add('dragover');
+});
+dropZone.addEventListener('dragleave', () => {
+  dropZone.classList.remove('dragover');
+});
+
+// Drop files
+dropZone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) {
+    uploadAndDisplayPhoto(file);
+  }
+});
